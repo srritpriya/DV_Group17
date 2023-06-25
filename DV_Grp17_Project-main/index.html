@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="./libs/css/bootstrap.min.css">
+    <script src="./libs/js/bootstrap.bundle.min.js"></script>
+    <script src="./libs/js/d3.min.js"></script>
+    <script src="./libs/js/d3_topo.min.js"></script>
+    <script src="./libs/js/colorlegend.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+    <title>CO2 Emissions</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">CO2 Emissions</a>
+        <h1 class="h2">Dashboard</h1>
+        <h3></h3>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                State/year
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./barPlot.html">
+                                Population/year
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./lineChart.html">
+                                Electricity generation using different resources </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-1 mb-2 pl-4">
+                    <h3>CO2 Emissions from different state in US from 2000-2018</h3>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="year_plchldr">Select year</span>
+                            </div>
+                            <input type="range" class="slider form-range form-control my-auto" min="2000" max="2018"
+                                id="yearRange">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="year_value"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <svg id="map"></svg>
+                <div id="quantileLegendVertical" class="legend2"></div>
+            </main>
+        </div>
+    </div>
+
+    <script src="./scripts/geoPlotScript.js"></script>
+
+    <div id="tooltip"></div>
+</body>
+
+</html>
